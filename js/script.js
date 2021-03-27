@@ -1,3 +1,35 @@
+
+// Answer question 1
+
+const cat = [
+{
+  complain: "Meow!"
+}
+];
+console.log(cat);
+
+
+
+// Answer question 2
+
+const heading = document.querySelector ("h3");
+
+heading.innerHTML ="Updated heading";
+
+
+
+// Answer question 3
+
+heading.style.fontSize = "2em";
+
+
+
+// Answer question 4
+
+heading.className ="subheading";
+
+
+
 // Answer question 5
 
 const paragraphs = document.querySelectorAll("p");
@@ -45,48 +77,43 @@ function animalList (list) {
 
 animalList("list");
 
+
 // Answer question 8
+
+const cats = [
+  {
+      name: "Blob",
+      age: 10
+  },
+  {
+      name: "Harold",
+  },
+  {
+      name: "Blurt",
+      age: 21
+  }
+];
 
 const assignCatsConteiner = document.querySelector (".cat-container");
 
-function createCats(cats) {
-  const cats = [
-    {
-        name: "Blob",
-        age: 10
-    },
-    {
-        name: "Harold",
-    },
-    {
-        name: "Blurt",
-        age: 21
-    }
-];
-
-
+let html = "";
 
 for (let i = 0; i < cats.length; i++) {
   
-let html = "";
+let unknown =  "Age unknown"  ;
 
-let unkownAge =  "Age unknown"  ;
-if (cats[i].age !== cats[i].age) {
-  unkownAge = cats[i].age;
-}
+if (cats[i].age !==cats[i].age ) {
  
-html +=  '<div class="pet">'
-               
-            "<h5> §{cats[i].name}</h5> "
-          
-            "<p> §{cats[i].age}</p>"
-              
-          '</div>';
-        
-
-}
-return html
+  unknown = cats[i].age;
 }
 
-createCats(cats);
-assignCatsConteiner.innerHTML = html;
+html += `<div>
+          <h5> Name: ${cats[i].name} </h5>
+          <p> Age:  ${cats[i].age} </p>
+        </div>
+        `;
+
+assignCatsConteiner.innerHTML = html;          
+}
+
+
